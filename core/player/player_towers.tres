@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TowerInv" load_steps=4 format=3 uid="uid://di4504gkcct8x"]
+
+[ext_resource type="Script" uid="uid://nw6rg3d3ki33" path="res://entities/towers/tools/tower_inv.gd" id="1_8h86i"]
+[ext_resource type="Script" uid="uid://lr5w7ne8ci1r" path="res://entities/towers/tools/tower_res.gd" id="2_y1gpy"]
+[ext_resource type="Resource" uid="uid://r1ppgww6avin" path="res://entities/towers/pp_shooter/pp_shooter.tres" id="3_y1gpy"]
+
+[resource]
+script = ExtResource("1_8h86i")
+towers = Array[ExtResource("2_y1gpy")]([ExtResource("3_y1gpy"), null])
+metadata/_custom_type_script = "uid://nw6rg3d3ki33"

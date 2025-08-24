@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TowerRes" load_steps=5 format=3 uid="uid://8pq7sw3pwqou"]
+
+[ext_resource type="Texture2D" uid="uid://gcf3b78v1xf8" path="res://assets/ase/flame-base.png" id="1_movv7"]
+[ext_resource type="Script" uid="uid://lr5w7ne8ci1r" path="res://entities/towers/tools/tower_res.gd" id="1_ynkgh"]
+[ext_resource type="PackedScene" uid="uid://cadmsv7345jt3" path="res://entities/towers/flamethrower/flamethrower.tscn" id="3_qbs3x"]
+[ext_resource type="Texture2D" uid="uid://vw3bvmqdydvw" path="res://assets/ase/flame-turret.png" id="4_mweul"]
+
+[resource]
+script = ExtResource("1_ynkgh")
+name = "Flamethrower"
+base = ExtResource("1_movv7")
+turret = ExtResource("4_mweul")
+tower_node = ExtResource("3_qbs3x")
+metadata/_custom_type_script = "uid://lr5w7ne8ci1r"

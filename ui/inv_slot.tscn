@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://j2maytpfsfy1"]
+
+[ext_resource type="Script" uid="uid://ctkqivk4r33en" path="res://ui/inv_slot.gd" id="1_ybuvb"]
+[ext_resource type="Texture2D" uid="uid://b0ahwfhxao76b" path="res://assets/ase/inv_slot.png" id="2_d0pf5"]
+
+[node name="InvSlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+script = ExtResource("1_ybuvb")
+
+[node name="Holder" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_d0pf5")
+centered = false
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+centered = false
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
