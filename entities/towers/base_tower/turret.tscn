@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://0fg6gfqe8qt3"]
+
+[ext_resource type="Script" uid="uid://bc3ck70lq85ai" path="res://entities/towers/base_tower/turret.gd" id="1_j1kpe"]
+
+[node name="Turret" type="Sprite2D"]
+texture_filter = 1
+script = ExtResource("1_j1kpe")

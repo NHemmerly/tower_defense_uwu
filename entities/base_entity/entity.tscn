@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnhw4rt7cpifx"]
+
+[ext_resource type="Script" uid="uid://whor4jgqnmt5" path="res://entities/base_entity/entity.gd" id="1_r7q2i"]
+[ext_resource type="Script" uid="uid://dkih7ce357qyy" path="res://entities/components/health.gd" id="2_rxvq1"]
+
+[node name="Entity" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_r7q2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+disabled = true
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_rxvq1")
+metadata/_custom_type_script = "uid://dkih7ce357qyy"
+
+[connection signal="died" from="Health" to="." method="_on_health_died"]
