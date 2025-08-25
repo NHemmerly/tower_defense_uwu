@@ -17,14 +17,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$canvas/held_item.position = get_global_mouse_position()
-	place_tower()
+	if Input.is_action_just_pressed("click"):
+		place_tower()
 
 
 func place_tower() -> void:
 	var current_scene = get_tree().current_scene
 	var viewport = get_viewport().get_visible_rect()
-	if viewport.has_point(get_global_mouse_position()) && \
-	Input.is_action_just_pressed("click"):
+	if viewport.has_point(get_global_mouse_position()):
 		if current_tile_data.get_custom_data("Buildable"):
 			var placed_tower = held_tower.tower_node.instantiate()
 			current_scene.add_child(placed_tower)

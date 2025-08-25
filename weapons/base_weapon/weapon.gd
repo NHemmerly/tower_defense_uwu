@@ -4,6 +4,8 @@ extends Node2D
 @export var wep_name: String
 @export_enum("projectile", "aoe") var type: int
 @export var damage: float
+@export var range: float
+@export var fire_rate: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
