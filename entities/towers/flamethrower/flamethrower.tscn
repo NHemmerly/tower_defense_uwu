@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cadmsv7345jt3"]
+[gd_scene load_steps=6 format=3 uid="uid://cadmsv7345jt3"]
 
 [ext_resource type="Script" uid="uid://dlrbs13pa8miw" path="res://entities/towers/base_tower/tower.gd" id="1_gjkig"]
 [ext_resource type="Texture2D" uid="uid://gcf3b78v1xf8" path="res://assets/ase/flame-base.png" id="2_k0ymb"]
 [ext_resource type="Texture2D" uid="uid://vw3bvmqdydvw" path="res://assets/ase/flame-turret.png" id="3_mepyh"]
+[ext_resource type="Script" uid="uid://bc3ck70lq85ai" path="res://entities/towers/base_tower/turret.gd" id="4_mepyh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gjkig"]
 radius = 17.0294
@@ -19,3 +20,5 @@ texture = ExtResource("2_k0ymb")
 
 [node name="Turret" type="Sprite2D" parent="."]
 texture = ExtResource("3_mepyh")
+script = ExtResource("4_mepyh")
+metadata/_custom_type_script = "uid://bc3ck70lq85ai"

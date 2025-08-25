@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://reb4bg756p5m"]
+[gd_scene load_steps=7 format=3 uid="uid://reb4bg756p5m"]
 
 [ext_resource type="Script" uid="uid://dlrbs13pa8miw" path="res://entities/towers/base_tower/tower.gd" id="1_dgqsq"]
 [ext_resource type="Texture2D" uid="uid://bx054x1r0yo4t" path="res://assets/ase/pp_shooter_base.png" id="2_soflx"]
 [ext_resource type="Script" uid="uid://bsgeqp21lngmh" path="res://entities/towers/base_tower/target.gd" id="3_1kpni"]
 [ext_resource type="Script" uid="uid://bc3ck70lq85ai" path="res://entities/towers/base_tower/turret.gd" id="4_1kpni"]
+[ext_resource type="Texture2D" uid="uid://jwj7hg63ra0i" path="res://assets/ase/pp_shooter_top.png" id="4_1oh0e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_soflx"]
 radius = 15.0
@@ -25,6 +26,7 @@ script = ExtResource("3_1kpni")
 metadata/_custom_type_script = "uid://bsgeqp21lngmh"
 
 [node name="Turret" type="Sprite2D" parent="." node_paths=PackedStringArray("targetting")]
+texture = ExtResource("4_1oh0e")
 script = ExtResource("4_1kpni")
 targetting = NodePath("../Target")
 metadata/_custom_type_script = "uid://bc3ck70lq85ai"

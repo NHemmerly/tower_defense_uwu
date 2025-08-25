@@ -9,11 +9,12 @@ script = ExtResource("1_bq184")
 tower_inv = ExtResource("2_ll17t")
 
 [node name="canvas" type="CanvasLayer" parent="."]
+layer = 2
 follow_viewport_enabled = true
 
 [node name="Tower-selector" parent="canvas" instance=ExtResource("2_h46vi")]
 
-[node name="held_item" type="Sprite2D" parent="."]
+[node name="held_item" type="Sprite2D" parent="canvas"]
 texture_filter = 1
 scale = Vector2(2, 2)
 
