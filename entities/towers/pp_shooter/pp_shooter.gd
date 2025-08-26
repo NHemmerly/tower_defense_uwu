@@ -1,11 +1,15 @@
-class_name Turret
-extends Sprite2D
+extends Tower
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	look_at(get_global_mouse_position())
-	rotate(PI/2)
+	pass
+
+
+func _on_range_area_mouse_entered() -> void:
+	print("eat rats")

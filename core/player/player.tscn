@@ -13,6 +13,7 @@ layer = 2
 follow_viewport_enabled = true
 
 [node name="Tower-selector" parent="canvas" instance=ExtResource("2_h46vi")]
+mouse_filter = 1
 
 [node name="held_item" type="Sprite2D" parent="canvas"]
 texture_filter = 1
