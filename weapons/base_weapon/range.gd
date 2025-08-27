@@ -12,6 +12,3 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	pass
-
-func _on_mouse_entered() -> void:
-	print("hey champ:) have a nice day")

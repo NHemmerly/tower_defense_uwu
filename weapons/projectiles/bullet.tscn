@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d22qqqanblbew"]
+
+[ext_resource type="Script" uid="uid://dmm1cefry00k4" path="res://weapons/projectiles/bullet.gd" id="1_apb1g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_apb1g"]
+
+[node name="Bullet" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_apb1g")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_apb1g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="hit_enemy" from="." to="." method="_on_hit_enemy"]

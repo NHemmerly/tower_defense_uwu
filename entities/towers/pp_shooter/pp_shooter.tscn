@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://reb4bg756p5m"]
+[gd_scene load_steps=10 format=3 uid="uid://reb4bg756p5m"]
 
 [ext_resource type="Script" uid="uid://tvtrtfekdpkd" path="res://entities/towers/pp_shooter/pp_shooter.gd" id="1_c5lgp"]
 [ext_resource type="Texture2D" uid="uid://bx054x1r0yo4t" path="res://assets/ase/pp_shooter_base.png" id="2_soflx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bc3ck70lq85ai" path="res://entities/towers/base_tower/turret.gd" id="4_1kpni"]
 [ext_resource type="Texture2D" uid="uid://jwj7hg63ra0i" path="res://assets/ase/pp_shooter_top.png" id="4_1oh0e"]
 [ext_resource type="Script" uid="uid://bbl8irx6f18q1" path="res://weapons/base_weapon/range.gd" id="6_c5lgp"]
+[ext_resource type="Resource" uid="uid://bb68aogjnu5uh" path="res://entities/towers/pp_shooter/pp_bullet.tres" id="6_ptvhk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_soflx"]
 radius = 15.0333
@@ -14,9 +15,12 @@ radius = 15.0333
 resource_local_to_scene = true
 radius = 0.01
 
-[node name="PpShooter" type="StaticBody2D"]
+[node name="PpShooter" type="StaticBody2D" node_paths=PackedStringArray("timer", "turret")]
 texture_filter = 1
 script = ExtResource("1_c5lgp")
+cooldown = 1.0
+timer = NodePath("shoot_cooldown")
+turret = NodePath("Turret")
 metadata/_custom_type_script = "uid://dlrbs13pa8miw"
 
 [node name="Base" type="Sprite2D" parent="."]
@@ -30,10 +34,16 @@ shape = SubResource("CircleShape2D_soflx")
 script = ExtResource("3_1kpni")
 metadata/_custom_type_script = "uid://bsgeqp21lngmh"
 
-[node name="Turret" type="Sprite2D" parent="."]
+[node name="Turret" type="Sprite2D" parent="." node_paths=PackedStringArray("muzzle")]
 texture = ExtResource("4_1oh0e")
 script = ExtResource("4_1kpni")
+muzzle = NodePath("muzzle")
+bullet = ExtResource("6_ptvhk")
+damage = 10.0
 metadata/_custom_type_script = "uid://bc3ck70lq85ai"
+
+[node name="muzzle" type="Marker2D" parent="Turret"]
+position = Vector2(-0.0459824, -14.7218)
 
 [node name="RangeArea" type="Area2D" parent="." node_paths=PackedStringArray("range_circle")]
 script = ExtResource("6_c5lgp")
@@ -44,4 +54,8 @@ metadata/_custom_type_script = "uid://bbl8irx6f18q1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea"]
 shape = SubResource("CircleShape2D_c5lgp")
 
+[node name="shoot_cooldown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="RangeArea" to="." method="_on_range_area_body_entered"]
 [connection signal="mouse_entered" from="RangeArea" to="." method="_on_range_area_mouse_entered"]
+[connection signal="timeout" from="shoot_cooldown" to="." method="_on_shoot_cooldown_timeout"]

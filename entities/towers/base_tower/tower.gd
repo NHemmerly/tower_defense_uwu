@@ -2,6 +2,7 @@ class_name Tower
 extends StaticBody2D
 
 @export var turret: Turret
+@export var target: Entity
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
