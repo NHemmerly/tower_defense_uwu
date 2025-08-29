@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dpm58k5pxx4gk" path="res://assets/ase/cool-critter.png" id="3_vpfcn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fd03"]
+radius = 7.0
+height = 14.0
 
 [node name="Croc" type="CharacterBody2D" node_paths=PackedStringArray("health", "nav_agent")]
 motion_mode = 1

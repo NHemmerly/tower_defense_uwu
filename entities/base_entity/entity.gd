@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		nav_agent.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
+	print()
 
 func _on_velocity_computed(safe_velocity: Vector2):
 	velocity = safe_velocity

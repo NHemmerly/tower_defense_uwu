@@ -37,4 +37,5 @@ grow_vertical = 2
 [node name="bar" type="HBoxContainer" parent="MarginContainer/Panel/ScrollContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 0
 theme_override_constants/separation = 10

@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=4 uid="uid://dicrq3xol8bmk"]
+[gd_scene load_steps=10 format=4 uid="uid://dicrq3xol8bmk"]
 
 [ext_resource type="Texture2D" uid="uid://bdpmyl6lipu3n" path="res://assets/ase/tower-defense-tileset.png" id="1_vi57w"]
 [ext_resource type="Script" uid="uid://tfk2gp3pe3ty" path="res://levels/components/base_tile.gd" id="2_kc1xx"]
 [ext_resource type="Texture2D" uid="uid://cuj6rkhbjfahp" path="res://assets/ase/tile_selectors.png" id="3_wm3a5"]
 [ext_resource type="Script" uid="uid://bt1sacq0dmu2u" path="res://levels/base_level/selectors.gd" id="4_oedc5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_oedc5"]
+vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc1xx"]
 texture = ExtResource("1_vi57w")
@@ -11,11 +17,15 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/custom_data_0 = true
 1:0/0 = 0
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_oedc5")
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.2673, -12.4425, 12.092, -12.4425, 11.7415, 12.4425, -12.6178, 12.4425)
 0:1/0/custom_data_0 = true
 
 [sub_resource type="TileSet" id="TileSet_wm3a5"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 custom_data_layer_0/name = "Buildable"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_kc1xx")

@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAE
 position = Vector2(12.9092, 337)
 
 [node name="end" type="Marker2D" parent="."]
-position = Vector2(340.142, 335.055)
+position = Vector2(1167.36, 302.313)
 
 [node name="Timer" type="Timer" parent="."]
 
