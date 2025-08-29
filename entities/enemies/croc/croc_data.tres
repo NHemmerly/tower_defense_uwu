@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=3 format=3 uid="uid://1lhwvbqk8j7f"]
+
+[ext_resource type="PackedScene" uid="uid://wx5wae6srfq8" path="res://entities/enemies/croc/Croc.tscn" id="1_0js2k"]
+[ext_resource type="Script" uid="uid://dkah6g7rvie8n" path="res://entities/base_entity/entity_data.gd" id="1_pshjr"]
+
+[resource]
+script = ExtResource("1_pshjr")
+entity = ExtResource("1_0js2k")
+metadata/_custom_type_script = "uid://dkah6g7rvie8n"

@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 		rotate(PI/2)
 	
 func shoot() -> void:
-	print("grouchie")
 	var current_scene = get_tree().current_scene
 	var new_bullet = bullet.bullet.instantiate()
 	new_bullet.data = bullet

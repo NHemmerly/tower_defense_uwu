@@ -6,11 +6,14 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fd03"]
 
-[node name="Croc" type="CharacterBody2D" node_paths=PackedStringArray("health")]
+[node name="Croc" type="CharacterBody2D" node_paths=PackedStringArray("health", "nav_agent")]
+motion_mode = 1
 script = ExtResource("1_l0ux4")
 ent_name = "Croc"
 type = 0
 health = NodePath("Health")
+nav_agent = NodePath("NavigationAgent2D")
+movement_speed = 100.0
 metadata/_custom_type_script = "uid://whor4jgqnmt5"
 
 [node name="Health" type="Node2D" parent="."]
@@ -23,5 +26,7 @@ shape = SubResource("CapsuleShape2D_7fd03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_vpfcn")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="died" from="Health" to="." method="_on_health_died"]
