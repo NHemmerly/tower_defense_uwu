@@ -10,7 +10,7 @@ script = ExtResource("1_k1ttk")
 spawn = NodePath("spawn")
 end = NodePath("end")
 mob = ExtResource("2_iey7c")
-spawn_timer = 2.0
+spawn_timer = 0.5
 timer = NodePath("Timer")
 metadata/_custom_type_script = "uid://brb355s5qsvyo"
 
@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAE
 position = Vector2(12.9092, 337)
 
 [node name="end" type="Marker2D" parent="."]
-position = Vector2(1167.36, 302.313)
+position = Vector2(1232.41, 304.146)
 
 [node name="Timer" type="Timer" parent="."]
 

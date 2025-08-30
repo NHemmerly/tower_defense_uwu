@@ -21,8 +21,9 @@ func shoot() -> void:
 	var new_bullet = bullet.bullet.instantiate()
 	new_bullet.data = bullet
 	current_scene.add_child(new_bullet)
-	new_bullet.target = target
+	new_bullet.set_target(target)
 	new_bullet.damage = damage
+	new_bullet.direction = muzzle.global_position - global_position
 	new_bullet.global_position = muzzle.global_position
 
 func set_target(entity: Entity) -> void:

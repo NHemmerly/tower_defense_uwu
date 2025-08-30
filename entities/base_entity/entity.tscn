@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://whor4jgqnmt5" path="res://entities/base_entity/entity.gd" id="1_r7q2i"]
 [ext_resource type="Script" uid="uid://dkih7ce357qyy" path="res://entities/components/health.gd" id="2_rxvq1"]
 
-[node name="Entity" type="CharacterBody2D"]
+[node name="Entity" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
 script = ExtResource("1_r7q2i")
 

@@ -22,6 +22,11 @@ func hone_target(delta) -> void:
 	if !target_died && target != null:
 		direction = target.global_position - global_position
 	position += data.speed * direction * delta
+	
+func set_target(ent) -> void:
+	if ent:
+		target = ent
+		
 
 func _on_hit_enemy(entity: Entity) -> void:
 	print("nicew")
@@ -41,8 +46,7 @@ func _on_body_entered(body: Node2D) -> void:
 	print("nicew")
 	if body is Entity && body == target:
 		body.health.damage(damage)
-		print(body.health.current_health)
 		queue_free()
-	elif target_died:
+	elif target_died and body.is_in_group("enemies"):
 		body.health.damage(damage)
 		queue_free()
