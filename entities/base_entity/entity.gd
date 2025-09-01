@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var health: Health
 @export var nav_agent: NavigationAgent2D
 @export var movement_speed: float
+@export var distance_to_end: float
 
 signal died(entity: Entity)
 
@@ -15,6 +16,12 @@ func _ready() -> void:
 
 func set_movement_target(movement_target: Vector2):
 	nav_agent.set_target_position(movement_target)
+	
+func get_distance_to_end() -> float:
+	return nav_agent.distance_to_target()
+	
+func _process(delta: float) -> void:
+	distance_to_end = get_distance_to_end()
 
 func _physics_process(delta: float) -> void:
 	if NavigationServer2D.map_get_iteration_id(nav_agent.get_navigation_map()) == 0:
