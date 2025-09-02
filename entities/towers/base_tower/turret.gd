@@ -6,6 +6,7 @@ extends Sprite2D
 @export var damage: float
 var state: TowerState
 var target: Entity
+var targets: Array[Entity]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _process(delta: float) -> void:
 	var new_state = state.update()
 	if new_state != null:
 		state = new_state
-		state.enter(self	)
+		state.enter(self)
 		
 func shoot() -> void:
 	var current_scene = get_tree().current_scene
