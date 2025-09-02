@@ -31,10 +31,8 @@ func place_tower() -> void:
 			placed_tower.position = get_scene_position(current_tile)
 		
 func _on_towerselector_hold_new_tower(tower_item: TowerRes) -> void:
-	print(tower_item)
 	held_tower = tower_item
 	$canvas/held_item.texture = held_tower.turret
-	print(held_tower.name)
 	
 func _hover_pos(tile_coords: Vector2i, tile_data: TileData) -> void:
 	current_tile = tile_coords

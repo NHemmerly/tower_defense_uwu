@@ -17,7 +17,6 @@ func setup_bar() -> void:
 	for tower in tower_inv.towers:
 		var new_tower = new_slot.instantiate()
 		new_tower.tower_item = tower
-		print(new_tower.tower_item)
 		$MarginContainer/Panel/ScrollContainer/bar.add_child(new_tower)
 		new_tower.tower_selected.connect(_on_tower_selected)
 		

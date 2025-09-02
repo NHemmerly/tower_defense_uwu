@@ -29,7 +29,6 @@ func set_target(ent) -> void:
 		
 
 func _on_hit_enemy(entity: Entity) -> void:
-	print("nicew")
 	if entity == target:
 		entity.health.damage(damage)
 		queue_free()
@@ -43,7 +42,6 @@ func _on_target_died(entity: Entity) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("nicew")
 	if body is Entity && body == target:
 		body.health.damage(damage)
 		queue_free()

@@ -5,6 +5,6 @@ func enter(turr: Turret) -> void:
 	caller = turr
 	
 func update() -> State:
-	if len(owner.targets) < 1:
+	if caller.target == null:
 		return IdleState.new()
 	return

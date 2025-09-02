@@ -5,6 +5,6 @@ func enter(turr: Turret) -> void:
 	caller = turr
 
 func update() -> State:
-	if len(caller.targets) > 0:
+	if caller.target != null:
 		return ShootingState.new()
 	return

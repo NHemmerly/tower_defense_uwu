@@ -6,7 +6,6 @@ extends Sprite2D
 @export var damage: float
 var state: TowerState
 var target: Entity
-var targets: Array[Entity]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
