@@ -15,12 +15,11 @@ radius = 15.0333
 resource_local_to_scene = true
 radius = 0.01
 
-[node name="PpShooter" type="StaticBody2D" node_paths=PackedStringArray("timer", "turret") groups=["towers"]]
+[node name="PpShooter" type="StaticBody2D" node_paths=PackedStringArray("turret", "timer") groups=["towers"]]
 texture_filter = 1
 script = ExtResource("1_c5lgp")
-cooldown = 0.5
-timer = NodePath("shoot_cooldown")
 turret = NodePath("Turret")
+timer = NodePath("shoot_cooldown")
 metadata/_custom_type_script = "uid://dlrbs13pa8miw"
 
 [node name="Base" type="Sprite2D" parent="."]

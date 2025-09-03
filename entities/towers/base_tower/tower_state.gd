@@ -4,5 +4,5 @@ extends State
 var tower: Tower
 var caller: Turret
 
-func enter(owner: Turret) -> void:
+func enter(call: Tower) -> void:
 	pass

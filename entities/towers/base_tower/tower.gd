@@ -12,6 +12,10 @@ enum Targeting {
 @export var target: Entity
 @export var targets: Array[Entity]
 @export var targeting: Targeting = Targeting.FIRST
+@export var timer: Timer
+@export var cooldown: float
+
+var state: TowerState
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +23,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if !state:
+		state = IdleState.new()
+		state.enter(self)
+	var new_state = state.update()
+	if new_state != null:
+		state = new_state
+		state.enter(self)
 	select_targeting()
 	
 func select_targeting() -> void:
@@ -35,17 +46,21 @@ func select_targeting() -> void:
 				turret.set_target(select_smallest())
 	
 func select_first() -> Entity:
-	return targets[0]
+	target = targets[0]
+	return target
 	
 func select_last() -> Entity:
-	return targets[-1]
+	target = targets[-1]
+	return target
 	
 func select_largest() -> Entity:
 	sort_targets_health()
+	target = targets[-1]
 	return targets[-1]
 	
 func select_smallest() -> Entity:
 	sort_targets_health()
+	target = targets[0]
 	return targets[0]
 	
 func sort_targets() -> void:
