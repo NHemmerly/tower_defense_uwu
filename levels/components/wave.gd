@@ -1,4 +1,4 @@
 class_name Wave
 extends Resource
 
-@export var enemies: Array[Entity]
+@export var enemies: Array[EntityData]

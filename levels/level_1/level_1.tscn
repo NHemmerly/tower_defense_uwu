@@ -1,15 +1,22 @@
-[gd_scene load_steps=5 format=4 uid="uid://d2h3xiffhj4qc"]
+[gd_scene load_steps=8 format=4 uid="uid://d2h3xiffhj4qc"]
 
 [ext_resource type="Script" uid="uid://brb355s5qsvyo" path="res://levels/base_level/base_level.gd" id="1_k1ttk"]
 [ext_resource type="PackedScene" uid="uid://dicrq3xol8bmk" path="res://levels/components/base_tile.tscn" id="2_epb64"]
 [ext_resource type="Resource" uid="uid://1lhwvbqk8j7f" path="res://entities/enemies/croc/croc_data.tres" id="2_iey7c"]
+[ext_resource type="Script" uid="uid://dkah6g7rvie8n" path="res://entities/base_entity/entity_data.gd" id="3_e6u7d"]
 [ext_resource type="PackedScene" uid="uid://cxctb6cc25xkg" path="res://core/player/player.tscn" id="4_iey7c"]
+[ext_resource type="Script" uid="uid://crvf6q31av66" path="res://levels/components/wave.gd" id="4_mxc8w"]
+
+[sub_resource type="Resource" id="Resource_j48du"]
+script = ExtResource("4_mxc8w")
+enemies = Array[ExtResource("3_e6u7d")]([ExtResource("2_iey7c")])
+metadata/_custom_type_script = "uid://crvf6q31av66"
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("spawn", "end", "timer")]
 script = ExtResource("1_k1ttk")
 spawn = NodePath("spawn")
 end = NodePath("end")
-mob = ExtResource("2_iey7c")
+waves = SubResource("Resource_j48du")
 spawn_timer = 0.5
 timer = NodePath("Timer")
 metadata/_custom_type_script = "uid://brb355s5qsvyo"
