@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_j48du"]
 script = ExtResource("4_mxc8w")
-enemies = Array[ExtResource("3_e6u7d")]([ExtResource("2_iey7c")])
+enemies = Array[ExtResource("3_e6u7d")]([ExtResource("2_iey7c"), ExtResource("2_iey7c")])
 metadata/_custom_type_script = "uid://crvf6q31av66"
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("spawn", "end", "timer")]
@@ -17,7 +17,7 @@ script = ExtResource("1_k1ttk")
 spawn = NodePath("spawn")
 end = NodePath("end")
 waves = SubResource("Resource_j48du")
-spawn_timer = 0.5
+spawn_timer = 2.0
 timer = NodePath("Timer")
 metadata/_custom_type_script = "uid://brb355s5qsvyo"
 

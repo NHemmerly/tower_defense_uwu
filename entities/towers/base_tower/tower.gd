@@ -31,37 +31,34 @@ func _process(delta: float) -> void:
 		state = new_state
 		state.enter(self)
 	select_targeting()
+	turret.look_at_target(target)
 	
 func select_targeting() -> void:
 	if len(targets) > 0:
 		sort_targets()
 		match targeting:
 			Targeting.FIRST:
-				turret.set_target(select_first())
+				select_first()
 			Targeting.LAST:
-				turret.set_target(select_last())
+				select_last()
 			Targeting.LARGEST:
-				turret.set_target(select_largest())	
+				select_largest()	
 			Targeting.SMALLEST:
-				turret.set_target(select_smallest())
+				select_smallest()
 	
-func select_first() -> Entity:
+func select_first() -> void:
 	target = targets[0]
-	return target
 	
-func select_last() -> Entity:
+func select_last() -> void:
 	target = targets[-1]
-	return target
 	
-func select_largest() -> Entity:
+func select_largest() -> void:
 	sort_targets_health()
 	target = targets[-1]
-	return targets[-1]
 	
-func select_smallest() -> Entity:
+func select_smallest() -> void:
 	sort_targets_health()
 	target = targets[0]
-	return targets[0]
 	
 func sort_targets() -> void:
 	targets.sort_custom(_sort_on_distance_to)

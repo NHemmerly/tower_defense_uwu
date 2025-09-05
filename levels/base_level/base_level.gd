@@ -21,15 +21,14 @@ func _process(delta: float) -> void:
 									
 
 func spawn_mob() -> void:
-	var new_mob = waves.enemies[wave].entity.instantiate()
-	add_child(new_mob)
-	new_mob.position = spawn.position
-	new_mob.set_movement_target(end.global_position)
-	wave += 1
-		
+	if wave < len(waves.enemies):
+		var new_mob = waves.enemies[wave].entity.instantiate()
+		add_child(new_mob)
+		new_mob.position = spawn.position
+		new_mob.set_movement_target(end.global_position)
+		wave += 1
 	
-
-
+	
 func _on_timer_timeout() -> void:
 	spawn_mob()
 	timer.start(spawn_timer)

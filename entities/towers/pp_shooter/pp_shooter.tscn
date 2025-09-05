@@ -38,7 +38,7 @@ texture = ExtResource("4_1oh0e")
 script = ExtResource("4_1kpni")
 muzzle = NodePath("muzzle")
 bullet = ExtResource("6_ptvhk")
-damage = 49.0
+damage = 100.0
 metadata/_custom_type_script = "uid://bc3ck70lq85ai"
 
 [node name="muzzle" type="Marker2D" parent="Turret"]

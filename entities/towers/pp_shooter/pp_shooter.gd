@@ -15,3 +15,5 @@ func _on_shoot_cooldown_timeout() -> void:
 func _on_range_area_body_exited(body: Node2D) -> void:
 	if body is Entity:
 		targets.erase(body)
+		if body == target:
+			target = null
