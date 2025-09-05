@@ -20,6 +20,7 @@ anchor_bottom = 1.0
 offset_top = 0.0479736
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 0
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
@@ -33,6 +34,7 @@ offset_left = 30.0
 offset_right = -30.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 
 [node name="bar" type="HBoxContainer" parent="MarginContainer/Panel/ScrollContainer"]
 layout_mode = 2

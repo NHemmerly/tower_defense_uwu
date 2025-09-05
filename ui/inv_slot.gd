@@ -23,4 +23,5 @@ func _on_mouse_exited() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if mouse_in && Input.is_action_just_pressed("click"):
+		get_viewport().set_input_as_handled()
 		tower_selected.emit(tower_item)

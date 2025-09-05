@@ -13,12 +13,13 @@ func _ready() -> void:
 	$"canvas/Tower-selector".setup_bar()
 	Events.map_tile_data.connect(_hover_pos)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("click"):
+		place_tower()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$canvas/held_item.position = get_global_mouse_position()
-	if Input.is_action_just_pressed("click"):
-		place_tower()
 
 
 func place_tower() -> void:
