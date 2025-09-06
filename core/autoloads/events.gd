@@ -4,6 +4,7 @@ extends Node
 
 signal map_tile_data(tile_position: Vector2i, tile_data: TileData)
 signal entity_died(entity: Entity)
+signal player_health_damage
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,3 +19,7 @@ func _get_mouse_tile(cell_pos: Vector2i, tile_data: TileData) -> void:
 	
 func _on_entity_died(entity: Entity):
 	entity_died.emit(entity)
+	
+func _on_entity_reaches_end(entity: Entity) -> void:
+	print("sploink!")
+	player_health_damage.emit()

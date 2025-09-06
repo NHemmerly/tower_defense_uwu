@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqy1sx1cdxba1"]
+
+[ext_resource type="Script" uid="uid://cl43tusox03fx" path="res://levels/components/level_end_area.gd" id="1_s25ob"]
+
+[node name="LevelEndArea" type="Area2D"]
+script = ExtResource("1_s25ob")

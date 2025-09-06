@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://d2h3xiffhj4qc"]
+[gd_scene load_steps=10 format=4 uid="uid://d2h3xiffhj4qc"]
 
 [ext_resource type="Script" uid="uid://brb355s5qsvyo" path="res://levels/base_level/base_level.gd" id="1_k1ttk"]
 [ext_resource type="PackedScene" uid="uid://dicrq3xol8bmk" path="res://levels/components/base_tile.tscn" id="2_epb64"]
@@ -6,11 +6,15 @@
 [ext_resource type="Script" uid="uid://dkah6g7rvie8n" path="res://entities/base_entity/entity_data.gd" id="3_e6u7d"]
 [ext_resource type="PackedScene" uid="uid://cxctb6cc25xkg" path="res://core/player/player.tscn" id="4_iey7c"]
 [ext_resource type="Script" uid="uid://crvf6q31av66" path="res://levels/components/wave.gd" id="4_mxc8w"]
+[ext_resource type="Script" uid="uid://cl43tusox03fx" path="res://levels/components/level_end_area.gd" id="7_mxc8w"]
 
 [sub_resource type="Resource" id="Resource_j48du"]
 script = ExtResource("4_mxc8w")
-enemies = Array[ExtResource("3_e6u7d")]([ExtResource("2_iey7c"), ExtResource("2_iey7c")])
+enemies = Array[ExtResource("3_e6u7d")]([ExtResource("2_iey7c"), ExtResource("2_iey7c"), ExtResource("2_iey7c"), ExtResource("2_iey7c"), ExtResource("2_iey7c")])
 metadata/_custom_type_script = "uid://crvf6q31av66"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j48du"]
+size = Vector2(58, 122)
 
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("spawn", "end", "timer")]
 script = ExtResource("1_k1ttk")
@@ -34,4 +38,13 @@ position = Vector2(1202, 307.345)
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="LevelEndArea" type="Area2D" parent="."]
+script = ExtResource("7_mxc8w")
+metadata/_custom_type_script = "uid://cl43tusox03fx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEndArea"]
+position = Vector2(1200, 304)
+shape = SubResource("RectangleShape2D_j48du")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="LevelEndArea" to="LevelEndArea" method="_on_body_entered"]
